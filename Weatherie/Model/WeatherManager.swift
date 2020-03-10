@@ -20,7 +20,8 @@ struct WeatherManager {
     
     
     func featchWeather(cityName: String) {
-        let url = "\(weatherUrl)&q=\(cityName)"
+        let newCityName = cityName.replacingOccurrences(of: " ", with: "+")
+        let url = "\(weatherUrl)&q=\(newCityName)"
         performRequest(urlString: url)
     }
     
